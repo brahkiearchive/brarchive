@@ -33,3 +33,13 @@ p {
     width: 50px;
     height: auto; /* Maintain aspect ratio */
 }
+
+/* Password screen styling */
+.password-screen {
+    /* Add your desired styles for the password screen here */
+}
+
+/* Hide the archive content by default */
+.archive-content {
+    display: none;
+}
