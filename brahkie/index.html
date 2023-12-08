@@ -8,27 +8,25 @@
 <body>
     <!-- Password Screen -->
     <div id="password-screen" class="screen">
-        <form id="password-form" class="password-form">
+        <div class="password-box">
             Password: <input type="password" id="password" required>
             <button type="submit">Submit</button>
-        </form>
+        </div>
     </div>
 
     <!-- Archive Content -->
     <div id="archive-content" class="screen" style="display: none;">
+        <div class="header">
+            <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/imageAssets/titleText.gif" alt="Brarchive Title">
+        </div>
         <div class="download-container">
+            <!-- Archive content goes here -->
+            <!-- Example entry -->
             <p>
                 <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/thumbnailAssets/why%20windows%20xp%20is%20better%20than%20windows%20vista%20-%20thumbnail.jpg" alt="Thumbnail">
                 <strong>12/04/2023</strong>: "why windows xp is better than windows vista" - <a href="https://github.com/brahkiearchive/brahkie/raw/main/assets/archiveZips/why%20windows%20xp%20is%20better%20than%20windows%20vista.mp4" download>Download</a>
             </p>
-            <p>
-                <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/thumbnailAssets/20k%20subscriber%20special!!1!!!%20-%20thumbnail.jpg" alt="Thumbnail">
-                <strong>11/23/2023</strong>: "20k subscriber special!!1!!!" - <a href="https://github.com/brahkiearchive/brahkie/raw/main/assets/archiveZips/20k%20subscriber%20special!!1!!!.mp4" download>Download</a>
-            </p>
-            <p>
-                <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/thumbnailAssets/normal%20san%20andreas%20review%20-%20thumbnail.jpg" alt="Thumbnail">
-                <strong>11/15/2023</strong>: "normal san andreas review" - <a href="https://github.com/brahkiearchive/brahkie/raw/main/assets/archiveZips/normal%20san%20andreas%20review.mp4" download>Download</a>
-            </p>
+            <!-- More entries follow... -->
         </div>
     </div>
 
@@ -38,7 +36,7 @@
     </div>
 
     <script>
-        const passwordForm = document.getElementById("password-form");
+        const passwordForm = document.querySelector(".password-box");
         const passwordInput = document.getElementById("password");
         const passwordScreen = document.getElementById("password-screen");
         const archiveContent = document.getElementById("archive-content");
@@ -47,7 +45,7 @@
         passwordForm.addEventListener("submit", function (event) {
             event.preventDefault();
             const enteredPassword = passwordInput.value;
-
+            
             if (enteredPassword === "brahkiebrewery") {
                 passwordScreen.style.display = "none";
                 archiveContent.style.display = "block";
