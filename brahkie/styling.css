@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://github.com/brahkiearchive/brahkie/raw/main/assets/imageAssets/background.jpg');
+    background-image: url('https://github.com/brahkiearchive/brahkie/raw/main/assets/imageAssets/background.gif');
     background-repeat: repeat;
     margin: 0;
     padding: 0;
@@ -25,5 +25,11 @@ p {
 
 /* Add spacing between the paragraphs (download links) */
 .download-container p {
-    margin-bottom: 3em; /* Adjust this value to add more space between lines */
+    margin-bottom: 3em;
+}
+
+/* Make the thumbnail images smaller */
+.download-container img {
+    width: 50px;
+    height: auto; /* Maintain aspect ratio */
 }
