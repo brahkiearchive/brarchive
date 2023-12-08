@@ -6,39 +6,55 @@
     <link rel="stylesheet" href="styling.css">
 </head>
 <body>
-    <!-- Password screen -->
-    <div id="password-screen" class="password-container">
-        <h1>Password Required</h1>
-        <form id="password-form">
-            <label for="password">Enter Password:</label>
-            <input type="password" id="password" required>
-            <button type="submit">Submit</button>
-        </form>
+    <!-- Password Screen -->
+    <div id="password-screen" class="hidden">
+        <div class="password-container">
+            <h1>Password Required</h1>
+            <form id="password-form">
+                <label for="password">Enter Password:</label>
+                <input type="password" id="password" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
 
-    <!-- Archive content -->
-    <div id="archive-content" class="archive-container">
+    <!-- Archive Content (Initially Hidden) -->
+    <div id="archive-content" class="hidden">
         <div class="header">
             <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/imageAssets/titleText.gif" alt="Brarchive GIF">
         </div>
-        <!-- Rest of your archive content here -->
+        <div class="download-container">
+            <p>
+                <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/thumbnailAssets/why%20windows%20xp%20is%20better%20than%20windows%20vista%20-%20thumbnail.jpg" alt="Thumbnail" width="50" height="28">
+                <strong>12/04/2023</strong>: "why windows xp is better than windows vista" - <a href="https://github.com/brahkiearchive/brahkie/raw/main/assets/archiveZips/why%20windows%20xp%20is%20better%20than%20windows%20vista.mp4" download>Download</a>
+            </p>
+            <p>
+                <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/thumbnailAssets/20k%20subscriber%20special!!1!!!%20-%20thumbnail.jpg" alt="Thumbnail" width="50" height="28">
+                <strong>11/23/2023</strong>: "20k subscriber special!!1!!!" - <a href="https://github.com/brahkiearchive/brahkie/raw/main/assets/archiveZips/20k%20subscriber%20special!!1!!!.mp4" download>Download</a>
+            </p>
+            <p>
+                <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/thumbnailAssets/normal%20san%20andreas%20review%20-%20thumbnail.jpg" alt="Thumbnail" width="50" height="28">
+                <strong>11/15/2023</strong>: "normal san andreas review" - <a href="https://github.com/brahkiearchive/brahkie/raw/main/assets/archiveZips/normal%20san%20andreas%20review.mp4" download>Download</a>
+            </p>
+            <!-- Add more download links here -->
+        </div>
     </div>
 
     <script>
-        const passwordScreen = document.getElementById("password-screen");
-        const archiveContent = document.getElementById("archive-content");
         const passwordForm = document.getElementById("password-form");
         const passwordInput = document.getElementById("password");
+        const passwordScreen = document.getElementById("password-screen");
+        const archiveContent = document.getElementById("archive-content");
 
         passwordForm.addEventListener("submit", function (event) {
             event.preventDefault();
             const enteredPassword = passwordInput.value;
 
             // Replace "your_password_here" with your actual password
-            if (enteredPassword === "brahkiebrewery") {
+            if (enteredPassword === "your_password_here") {
                 // Show the archive content and hide the password screen
-                archiveContent.style.display = "block";
                 passwordScreen.style.display = "none";
+                archiveContent.style.display = "block";
             }
         });
     </script>
