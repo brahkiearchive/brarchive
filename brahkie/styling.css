@@ -1,66 +1,73 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
+body {
     background-image: url('https://github.com/brahkiearchive/brahkie/raw/main/assets/imageAssets/background.gif');
     background-repeat: repeat;
-    font-family: Arial, sans-serif;
-}
-
-#content {
-    height: 100%;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    text-align: center;
 }
 
-#password-screen, #unwelcome-screen {
+/* Style the download container with a gray background */
+.download-container {
+    background-color: #666666;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Add spacing between the paragraphs (download links) */
+.download-container p {
+    margin: 0;
+    padding: 10px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
+    gap: 10px;
 }
 
-#password-form {
+/* Make the thumbnail images smaller and remove fixed dimensions to maintain aspect ratio */
+.download-container img {
+    width: 80px; /* Adjust as needed */
+    height: auto;
+}
+
+/* Password screen styling */
+.password-screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: #666666;
     padding: 20px;
     border-radius: 0; /* Sharp edges */
 }
 
-#archive-content {
-    display: none; /* Hidden by default */
-    text-align: center;
+/* Hide the archive content by default */
+.archive-content {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.header img {
-    max-width: 600px; /* Adjust as needed */
-    height: auto;
-}
-
-.download-container {
-    background-color: #666666;
-    padding: 10px;
-    margin-top: 20px; /* Adjust spacing between title GIF and content */
-}
-
-.download-container p {
+/* Style for the unwelcome screen */
+.unwelcome-screen {
+    background-color: black;
+    color: red;
+    width: 100vw;
+    height: 100vh;
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
-    margin: 10px 0; /* Add space between download links */
-}
-
-.download-container img {
-    width: 100px; /* Adjust as needed */
-    height: auto;
-}
-
-#unwelcome-screen {
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    font-size: 24px;
+    text-align: center;
+    position: absolute;
     top: 0;
     left: 0;
-    background-color: black;
-    display: none;
+}
+
+.unwelcome-screen p {
+    margin: 0;
+}
