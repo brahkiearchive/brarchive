@@ -15,21 +15,25 @@ body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
 }
 
-.password-form {
+.password-box {
+    display: inline-block;
     background-color: #666666;
     padding: 20px;
-    border: none;
+    border-radius: 0; /* Sharp edges */
+}
+
+.header img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Style the download container */
 .download-container {
     background-color: #666666;
     padding: 10px;
-    text-align: left;
-    margin-left: 0; /* Align to the left side of the gray box */
+    margin-top: 20px; /* Adjust spacing between title GIF and content */
 }
 
 /* Add spacing between the paragraphs (download links) */
