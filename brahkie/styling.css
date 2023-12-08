@@ -71,3 +71,10 @@ body {
 .unwelcome-screen p {
     margin: 0;
 }
+
+/* Additional style for the header image */
+.header img {
+    display: block; /* This will put the title GIF on a new line */
+    margin: 0 auto; /* This will center the GIF */
+    padding-bottom: 20px; /* This adds some space below the GIF */
+}
