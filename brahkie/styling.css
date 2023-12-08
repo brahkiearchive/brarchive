@@ -3,6 +3,10 @@ body {
     background-repeat: repeat;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 /* Center-align the header */
@@ -36,7 +40,12 @@ p {
 
 /* Password screen styling */
 .password-screen {
-    /* Add your desired styles for the password screen here */
+    background-color: #666666;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Hide the archive content by default */
@@ -48,12 +57,16 @@ p {
 .unwelcome-screen {
     background-color: black;
     color: red;
+    width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
     text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .unwelcome-screen p {
