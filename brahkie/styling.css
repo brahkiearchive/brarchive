@@ -43,3 +43,19 @@ p {
 .archive-content {
     display: none;
 }
+
+/* Style for the unwelcome screen */
+.unwelcome-screen {
+    background-color: black;
+    color: red;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-align: center;
+}
+
+.unwelcome-screen p {
+    margin: 0;
+}
