@@ -12,19 +12,13 @@ body {
 /* Center-align the header */
 .header {
     text-align: center;
-    margin-top: 2in;
-}
-
-/* Add left margin to the rest of the content */
-p {
-    margin-left: 2in;
 }
 
 /* Style the download container with a gray background */
 .download-container {
     background-color: #666666;
     padding: 10px;
-    margin: 2in;
+    margin-left: 10px; /* Move closer to the left side */
 }
 
 /* Add spacing between the paragraphs (download links) */
@@ -42,7 +36,7 @@ p {
 .password-screen {
     background-color: #666666;
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 0; /* Sharp edges */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,7 +53,6 @@ p {
     color: red;
     width: 100vw;
     height: 100vh;
-    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 24px;
