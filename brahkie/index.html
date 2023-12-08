@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <title>Brarchive</title>
     <link rel="stylesheet" href="styling.css">
+    <style>
+        /* Hide the archive content by default */
+        #archive-content {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- Password Screen -->
-    <div id="password-screen" class="hidden">
+    <div id="password-screen">
         <div class="password-container">
             <h1>Password Required</h1>
             <form id="password-form">
@@ -18,8 +24,8 @@
         </div>
     </div>
 
-    <!-- Archive Content (Initially Hidden) -->
-    <div id="archive-content" class="hidden">
+    <!-- Archive Content -->
+    <div id="archive-content">
         <div class="header">
             <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/imageAssets/titleText.gif" alt="Brarchive GIF">
         </div>
