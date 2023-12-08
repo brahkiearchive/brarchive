@@ -20,7 +20,29 @@
 
     <!-- Archive Content -->
     <div id="archive-content" class="archive-content">
-        <!-- Existing content here... -->
+        <div class="header">
+            <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/imageAssets/titleText.gif" alt="Brarchive GIF">
+        </div>
+        <div class="download-container">
+            <p>
+                <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/thumbnailAssets/why%20windows%20xp%20is%20better%20than%20windows%20vista%20-%20thumbnail.jpg" alt="Thumbnail" width="50" height="28">
+                <strong>12/04/2023</strong>: "why windows xp is better than windows vista" - <a href="https://github.com/brahkiearchive/brahkie/raw/main/assets/archiveZips/why%20windows%20xp%20is%20better%20than%20windows%20vista.mp4" download>Download</a>
+            </p>
+            <p>
+                <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/thumbnailAssets/20k%20subscriber%20special!!1!!!%20-%20thumbnail.jpg" alt="Thumbnail" width="50" height="28">
+                <strong>11/23/2023</strong>: "20k subscriber special!!1!!!" - <a href="https://github.com/brahkiearchive/brahkie/raw/main/assets/archiveZips/20k%20subscriber%20special!!1!!!.mp4" download>Download</a>
+            </p>
+            <p>
+                <img src="https://github.com/brahkiearchive/brahkie/raw/main/assets/thumbnailAssets/normal%20san%20andreas%20review%20-%20thumbnail.jpg" alt="Thumbnail" width="50" height="28">
+                <strong>11/15/2023</strong>: "normal san andreas review" - <a href="https://github.com/brahkiearchive/brahkie/raw/main/assets/archiveZips/normal%20san%20andreas%20review.mp4" download>Download</a>
+            </p>
+            <!-- Add more download links here -->
+        </div>
+    </div>
+
+    <!-- Unwelcome Screen -->
+    <div id="unwelcome-screen" class="unwelcome-screen" style="display: none;">
+        <p>You are not welcome</p>
     </div>
 
     <script>
@@ -28,16 +50,18 @@
         const passwordInput = document.getElementById("password");
         const passwordScreen = document.getElementById("password-screen");
         const archiveContent = document.getElementById("archive-content");
+        const unwelcomeScreen = document.getElementById("unwelcome-screen");
 
         passwordForm.addEventListener("submit", function (event) {
             event.preventDefault();
             const enteredPassword = passwordInput.value;
 
-            // Check if the entered password is correct
             if (enteredPassword === "brahkiebrewery") {
-                // Show the archive content and hide the password screen
                 passwordScreen.style.display = "none";
                 archiveContent.style.display = "block";
+            } else {
+                passwordScreen.style.display = "none";
+                unwelcomeScreen.style.display = "block";
             }
         });
     </script>
