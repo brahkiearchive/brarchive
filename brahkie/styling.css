@@ -1,0 +1,29 @@
+body {
+    background-image: url('https://github.com/brahkiearchive/brahkie/raw/main/assets/imageAssets/background.jpg');
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center-align the header */
+.header {
+    text-align: center;
+    margin-top: 2in;
+}
+
+/* Add left margin to the rest of the content */
+p {
+    margin-left: 2in;
+}
+
+/* Style the download container with a gray background */
+.download-container {
+    background-color: #666666;
+    padding: 10px;
+    margin: 2in;
+}
+
+/* Add spacing between the paragraphs (download links) */
+.download-container p {
+    margin-bottom: 3em; /* Adjust this value to add more space between lines */
+}
