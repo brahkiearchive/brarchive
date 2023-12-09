@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         var targetY = event.clientY;
         
         // Update the lizard's position to move towards the cursor
-        lizardX += (targetX - lizardX) * 0.05; // Slower movement
-        lizardY += (targetY - lizardY) * 0.05; // Slower movement
+        lizardX += (targetX - lizardX) * 0.01; // Slower movement
+        lizardY += (targetY - lizardY) * 0.01; // Slower movement
         
         // Apply the position style to the lizard image
         lizardImage.style.left = lizardX + 'px';
