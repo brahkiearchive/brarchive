@@ -21,11 +21,12 @@
         .element-box {
             position: absolute;
             top: 50%; /* Start at the center of the page */
-            width: 80%; /* Width of the box */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust position to truly center the box */
+            width: 33.33%; /* Width of the box is 1/3 of the screen */
             background-color: #666666; /* Hex color for the background */
             padding: 20px; /* Padding inside the box */
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Optional: Adds a shadow for better visibility */
-            border-radius: 10px; /* Optional: Rounded corners */
             overflow: auto; /* Ensures content overflow is handled */
         }
         /* Add more CSS as needed */
