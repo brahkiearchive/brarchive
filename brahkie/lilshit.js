@@ -17,26 +17,30 @@ document.addEventListener('DOMContentLoaded', function() {
     var lizardX = 0;
     var lizardY = 0;
 
+    // Last known cursor position
+    var cursorX = 0;
+    var cursorY = 0;
+
     // Function to move the lizard image
-    function moveLizard(event) {
-        // Target cursor position
-        var targetX = event.clientX;
-        var targetY = event.clientY;
-        
+    function moveLizard() {
         // Update the lizard's position to move towards the cursor
-        lizardX += (targetX - lizardX) * 0.01; // Slower movement
-        lizardY += (targetY - lizardY) * 0.01; // Slower movement
+        lizardX += (cursorX - lizardX) * 0.05; // Slower movement
+        lizardY += (cursorY - lizardY) * 0.05; // Slower movement
         
         // Apply the position style to the lizard image
         lizardImage.style.left = lizardX + 'px';
         lizardImage.style.top = lizardY + 'px';
 
         // Use requestAnimationFrame for smoother animation
-        requestAnimationFrame(function() {
-            moveLizard(event);
-        });
+        requestAnimationFrame(moveLizard);
     }
 
-    // Attach the event listener to the document
-    document.addEventListener('mousemove', moveLizard);
+    // Start the movement loop
+    requestAnimationFrame(moveLizard);
+
+    // Update the cursor position
+    document.addEventListener('mousemove', function(event) {
+        cursorX = event.clientX - 25; // Offset by half the lizard's width for centering
+        cursorY = event.clientY - 25; // Offset by half the lizard's height for centering
+    });
 });
