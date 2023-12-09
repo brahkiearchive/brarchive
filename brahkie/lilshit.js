@@ -22,18 +22,21 @@ document.addEventListener('DOMContentLoaded', function() {
         cursorY = event.clientY;
     });
 
-    // Move the lizard image
+    // Move and rotate the lizard image
     function moveLizard() {
-        // Calculate the distance from the lizard's current position to the cursor's position
         var lizardRect = lizardImage.getBoundingClientRect();
+        
+        // Update position
         var dx = cursorX - lizardRect.left - lizardRect.width / 2;
         var dy = cursorY - lizardRect.top - lizardRect.height / 2;
-
-        // Update the lizard's position by a fraction of the distance to create a smooth animation
         lizardImage.style.left = `${lizardRect.left + dx * 0.1}px`;
         lizardImage.style.top = `${lizardRect.top + dy * 0.1}px`;
 
-        // Continue the movement by calling moveLizard on the next animation frame
+        // Calculate angle and rotate
+        var angle = Math.atan2(dy, dx) * 180 / Math.PI;
+        lizardImage.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
+
+        // Continue the movement
         requestAnimationFrame(moveLizard);
     }
 
