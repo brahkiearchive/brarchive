@@ -9,90 +9,47 @@
             background-repeat: repeat;
             margin: 0;
             padding: 0;
+            height: 100vh;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            justify-content: flex-start;
-            height: auto;
-            min-height: 100vh;
         }
-        .title-image img {
-            width: 100%;
-            height: auto;
-            display: block; /* Remove any extra space below the image */
+        .title-image {
+            position: absolute;
+            top: 20%;
         }
         .element-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             width: 50%;
             background-color: #666666;
             padding: 20px;
-            margin-top: 30px; /* Spacing from the title */
-            box-sizing: border-box; /* Include padding in the box's width */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            overflow: auto;
         }
-        .video-content {
+        .archive-entry {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            width: 100%;
+            margin-bottom: 20px; /* Spacing between entries */
         }
-        .video-thumbnail {
-            width: 56.25%; /* 16:9 aspect ratio */
-            height: auto;
-            margin-bottom: 10px;
+        .archive-entry img {
+            margin-right: 10px; /* Space from the left of the box */
+            height: 20px; /* Thumbnail height */
+            width: auto; /* Width is proportional to the height */
         }
-        .video-title, .video-date, .video-description, .download-link {
-            margin: 8px 0;
-            text-align: center;
-            width: 100%;
-        }
-        .video-description {
-            text-align: justify;
-            padding: 0 10px; /* Padding for text */
-        }
-        .download-link {
-            text-align: right;
-            margin-top: 10px;
-            padding: 0 10px; /* Padding for link */
-        }
-        .separator {
-            width: 100%;
-            height: 1px;
-            background-color: #000;
-            margin: 20px 0;
-        }
+        /* Add more CSS as needed */
     </style>
 </head>
 <body>
-    <div class="title-image">
-        <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/title.gif?raw=true" alt="Brahkies Archive Title">
-    </div>
+    <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/title.gif?raw=true" alt="Title" class="title-image">
     <div class="element-box">
-        <!-- Archive Entry -->
-        <div class="video-content">
-            <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/thumbnails/016%20-%20why%20windows%20xp%20is%20better%20than%20windows%20vista.jpg?raw=true" alt="Why Windows XP is better than Windows Vista" class="video-thumbnail">
-            <div class="video-title">"Why Windows XP is better than Windows Vista"</div>
-            <div class="video-date">"12/04/2023"</div>
-            <div class="video-description">
-                "pls tell me if you like the video i tired really hard to make it nice"
-            </div>
-            <div class="download-link">
-                <a href="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/zips/016%20-%20why%20windows%20xp%20is%20better%20than%20windows%20vista.zip?raw=true" download="016 - why windows xp is better than windows vista.zip">downloadlink.zip</a>
-            </div>
+        <div class="archive-entry">
+            <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/thumbnails/016%20-%20why%20windows%20xp%20is%20better%20than%20windows%20vista.jpg?raw=true" alt="Thumbnail">
+            <!-- Additional content for this entry goes here -->
         </div>
-        <div class="separator"></div>
-        <!-- Placeholder for another video content -->
-        <!-- You can duplicate the structure below for more entries -->
-        <div class="video-content">
-            <img src="path_to_your_next_video_thumbnail_image" alt="Next Video Title" class="video-thumbnail">
-            <div class="video-title">"Next Video Title"</div>
-            <div class="video-date">"Next Video Date"</div>
-            <div class="video-description">
-                "Next video description goes here."
-            </div>
-            <div class="download-link">
-                <a href="path_to_your_next_video_download_link.zip" download="next_video_title.zip">next_downloadlink.zip</a>
-            </div>
-        </div>
-        <!-- End of placeholder for another video content -->
+        <!-- Additional entries can be added here -->
     </div>
 </body>
 </html>
