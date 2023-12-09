@@ -1,38 +1,42 @@
-/* Add styles for body, header, and download-container */
-body {
-    margin: 0;
-    padding: 0;
-    background: url('path-to-your-background-gif.gif') repeat;
-    text-align: center; /* This will center the content */
-}
+// lilshit.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Create the lizard image and append it to the body
+    var lizardImage = document.createElement('img');
+    lizardImage.src = 'https://github.com/brahkiearchive/brarchive/blob/main/assets/imageAssets/lilshit.png?raw=true';
+    lizardImage.alt = 'Lizard';
+    lizardImage.id = 'lilshit';
+    lizardImage.style.position = 'absolute';
+    lizardImage.style.pointerEvents = 'none';
+    lizardImage.style.width = '50px'; // Set the size of your lizard image
+    lizardImage.style.height = 'auto';
+    lizardImage.style.left = '0px';
+    lizardImage.style.top = '0px';
+    document.body.appendChild(lizardImage);
 
-.header {
-    margin-top: 50px; /* Adjust this value as needed */
-}
+    // Track the cursor position
+    var cursorX = 0;
+    var cursorY = 0;
 
-.download-container {
-    background-color: grey; /* Your grey background */
-    margin: 20px auto; /* Centers the box and adds margin on top */
-    padding: 20px; /* Padding inside the box */
-    max-width: 80%; /* Adjust the width as needed */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: adds a shadow for depth */
-}
+    document.addEventListener('mousemove', function(event) {
+        cursorX = event.clientX;
+        cursorY = event.clientY;
+    });
 
-/* Existing styles for password screen and unwelcome screen */
-.password-screen {
-    /* Your existing styles */
-}
+    // Move the lizard image
+    function moveLizard() {
+        // Calculate the distance from the lizard's current position to the cursor's position
+        var lizardRect = lizardImage.getBoundingClientRect();
+        var dx = cursorX - lizardRect.left - lizardRect.width / 2;
+        var dy = cursorY - lizardRect.top - lizardRect.height / 2;
 
-.unwelcome-screen {
-    /* Your existing styles */
-}
+        // Update the lizard's position by a fraction of the distance to create a smooth animation
+        lizardImage.style.left = `${lizardRect.left + dx * 0.1}px`;
+        lizardImage.style.top = `${lizardRect.top + dy * 0.1}px`;
 
-/* Existing styles for lizard image in lilshit.js */
-#lilshit {
-    position: absolute;
-    pointer-events: none;
-    width: 50px; /* Set the size of your lizard image */
-    height: auto;
-    left: 0px;
-    top: 0px;
-}
+        // Continue the movement by calling moveLizard on the next animation frame
+        requestAnimationFrame(moveLizard);
+    }
+
+    // Start moving the lizard
+    moveLizard();
+});
