@@ -10,23 +10,23 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align to the top */
-            height: auto; /* Allow the body to expand with content */
-            min-height: 100vh; /* Minimum height is full viewport */
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            height: auto;
+            min-height: 100vh;
         }
-        .title-image {
-            position: absolute;
-            top: 20%;
-            width: 100%; /* Make the title full width */
-            margin-bottom: 50px; /* Space below the title */
+        .title-image img {
+            width: 100%;
+            height: auto;
+            display: block; /* Remove any extra space below the image */
         }
         .element-box {
             width: 50%;
             background-color: #666666;
             padding: 20px;
-            margin-top: calc(50vh - 70px); /* Adjust based on the height of the title image */
-            margin-bottom: 20px;
+            margin-top: 30px; /* Spacing from the title */
+            box-sizing: border-box; /* Include padding in the box's width */
         }
         .video-content {
             display: flex;
@@ -35,9 +35,9 @@
             width: 100%;
         }
         .video-thumbnail {
-            width: 100%; /* Full width of the container */
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 10px; /* Space below thumbnail */
+            width: 56.25%; /* 16:9 aspect ratio */
+            height: auto;
+            margin-bottom: 10px;
         }
         .video-title, .video-date, .video-description, .download-link {
             margin: 8px 0;
@@ -45,11 +45,13 @@
             width: 100%;
         }
         .video-description {
-            text-align: left; /* Align description text to the left */
+            text-align: justify;
+            padding: 0 10px; /* Padding for text */
         }
         .download-link {
-            text-align: right; /* Align download link to the right */
-            margin-top: 10px; /* Space above the download link */
+            text-align: right;
+            margin-top: 10px;
+            padding: 0 10px; /* Padding for link */
         }
         .separator {
             width: 100%;
@@ -61,4 +63,36 @@
 </head>
 <body>
     <div class="title-image">
-        <img src="https://github.com/brahkiearchive/brarchive/blob/main/brah
+        <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/title.gif?raw=true" alt="Brahkies Archive Title">
+    </div>
+    <div class="element-box">
+        <!-- Archive Entry -->
+        <div class="video-content">
+            <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/thumbnails/016%20-%20why%20windows%20xp%20is%20better%20than%20windows%20vista.jpg?raw=true" alt="Why Windows XP is better than Windows Vista" class="video-thumbnail">
+            <div class="video-title">"Why Windows XP is better than Windows Vista"</div>
+            <div class="video-date">"12/04/2023"</div>
+            <div class="video-description">
+                "pls tell me if you like the video i tired really hard to make it nice"
+            </div>
+            <div class="download-link">
+                <a href="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/zips/016%20-%20why%20windows%20xp%20is%20better%20than%20windows%20vista.zip?raw=true" download="016 - why windows xp is better than windows vista.zip">downloadlink.zip</a>
+            </div>
+        </div>
+        <div class="separator"></div>
+        <!-- Placeholder for another video content -->
+        <!-- You can duplicate the structure below for more entries -->
+        <div class="video-content">
+            <img src="path_to_your_next_video_thumbnail_image" alt="Next Video Title" class="video-thumbnail">
+            <div class="video-title">"Next Video Title"</div>
+            <div class="video-date">"Next Video Date"</div>
+            <div class="video-description">
+                "Next video description goes here."
+            </div>
+            <div class="download-link">
+                <a href="path_to_your_next_video_download_link.zip" download="next_video_title.zip">next_downloadlink.zip</a>
+            </div>
+        </div>
+        <!-- End of placeholder for another video content -->
+    </div>
+</body>
+</html>
