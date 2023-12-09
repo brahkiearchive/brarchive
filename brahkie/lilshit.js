@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
     lizardImage.style.height = 'auto';
     lizardImage.style.left = '0px';
     lizardImage.style.top = '0px';
-    lizardImage.style.transition = 'left 0.1s, top 0.1s';
     document.body.appendChild(lizardImage);
 
     // Track the cursor position
@@ -21,35 +20,28 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('mousemove', function(event) {
         cursorX = event.clientX;
         cursorY = event.clientY;
+        updateLizardPosition();
     });
 
     // Move and rotate the lizard image
-    function moveLizard() {
-        // Update the lizard's position
+    function updateLizardPosition() {
         var lizardRect = lizardImage.getBoundingClientRect();
-        var lizardX = lizardRect.left + window.scrollX;
-        var lizardY = lizardRect.top + window.scrollY;
+        var lizardCenterX = lizardRect.left + lizardRect.width / 2;
+        var lizardCenterY = lizardRect.top + lizardRect.height / 2;
 
-        // Calculate the distance from the lizard's current position to the cursor's position
-        var dx = cursorX - (lizardX + lizardRect.width);
-        var dy = cursorY - (lizardY + lizardRect.height);
+        // Calculate angle
+        var angle = Math.atan2(cursorY - lizardCenterY, cursorX - lizardCenterX) * 180 / Math.PI;
 
-        // Move the lizard towards the cursor
-        lizardX += dx * 0.05; // Adjust the speed as needed
-        lizardY += dy * 0.05; // Adjust the speed as needed
+        // Rotate the lizard image
+        lizardImage.style.transform = `translate(-50%, -50%) rotate(${angle}deg)`;
 
-        // Calculate the angle for rotation
-        var angle = Math.atan2(dy, dx) * 180 / Math.PI;
-
-        // Apply the position and rotation to the lizard image
-        lizardImage.style.left = `${lizardX}px`;
-        lizardImage.style.top = `${lizardY}px`;
-        lizardImage.style.transform = `rotate(${angle}deg)`;
-
-        // Continue the movement
-        requestAnimationFrame(moveLizard);
+        // Move the lizard image
+        var dx = cursorX - lizardCenterX;
+        var dy = cursorY - lizardCenterY;
+        lizardImage.style.left = `${lizardRect.left + dx * 0.05}px`;
+        lizardImage.style.top = `${lizardRect.top + dy * 0.05}px`;
     }
 
-    // Start moving the lizard
-    moveLizard();
+    // Start the initial position update
+    updateLizardPosition();
 });
