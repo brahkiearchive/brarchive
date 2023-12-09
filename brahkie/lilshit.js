@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     lizardImage.id = 'lilshit';
     lizardImage.style.position = 'absolute';
     lizardImage.style.pointerEvents = 'none';
-    lizardImage.style.width = '50px'; // Set the size of your lizard image
+    lizardImage.style.width = '50px'; // Adjust the size as needed
     lizardImage.style.height = 'auto';
+    lizardImage.style.transformOrigin = 'bottom right'; // Set rotation origin to bottom right
     document.body.appendChild(lizardImage);
 
     // Track the cursor position
@@ -24,11 +25,11 @@ document.addEventListener('DOMContentLoaded', function() {
     function moveLizard() {
         // Determine the center of the lizard image
         var lizardRect = lizardImage.getBoundingClientRect();
-        var lizardCenterX = lizardRect.left + lizardRect.width;
-        var lizardCenterY = lizardRect.top + lizardRect.height;
+        var lizardX = lizardRect.left + window.scrollX;
+        var lizardY = lizardRect.top + window.scrollY;
 
         // Calculate the angle of rotation
-        var angle = Math.atan2(cursorY - lizardCenterY, cursorX - lizardCenterX) * 180 / Math.PI;
+        var angle = Math.atan2(cursorY - lizardY, cursorX - lizardX) * 180 / Math.PI;
 
         // Update the lizard's position and rotation
         lizardImage.style.left = `${cursorX - lizardRect.width}px`;
