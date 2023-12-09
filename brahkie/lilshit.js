@@ -11,15 +11,30 @@ document.addEventListener('DOMContentLoaded', function() {
     lizardImage.style.height = 'auto';
     lizardImage.style.left = '0px';
     lizardImage.style.top = '0px';
-    lizardImage.style.transition = 'left 0.1s, top 0.1s';
     document.body.appendChild(lizardImage);
+
+    // Initial lizard position
+    var lizardX = 0;
+    var lizardY = 0;
 
     // Function to move the lizard image
     function moveLizard(event) {
-        var newX = event.clientX - 20; // 20 is half the width of the lizard image to center it
-        var newY = event.clientY - 20; // 20 is half the height of the lizard image to center it
-        lizardImage.style.left = newX + 'px';
-        lizardImage.style.top = newY + 'px';
+        // Target cursor position
+        var targetX = event.clientX;
+        var targetY = event.clientY;
+        
+        // Update the lizard's position to move towards the cursor
+        lizardX += (targetX - lizardX) * 0.05; // Slower movement
+        lizardY += (targetY - lizardY) * 0.05; // Slower movement
+        
+        // Apply the position style to the lizard image
+        lizardImage.style.left = lizardX + 'px';
+        lizardImage.style.top = lizardY + 'px';
+
+        // Use requestAnimationFrame for smoother animation
+        requestAnimationFrame(function() {
+            moveLizard(event);
+        });
     }
 
     // Attach the event listener to the document
