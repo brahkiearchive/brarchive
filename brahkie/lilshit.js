@@ -7,9 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     lizardImage.id = 'lilshit';
     lizardImage.style.position = 'absolute';
     lizardImage.style.pointerEvents = 'none';
-    lizardImage.style.width = '50px'; // Adjust the size as needed
+    lizardImage.style.width = '50px'; // Set the size of your lizard image
     lizardImage.style.height = 'auto';
-    lizardImage.style.transformOrigin = 'bottom right'; // Set rotation origin to bottom right
+    lizardImage.style.left = '0px';
+    lizardImage.style.top = '0px';
     document.body.appendChild(lizardImage);
 
     // Track the cursor position
@@ -21,22 +22,18 @@ document.addEventListener('DOMContentLoaded', function() {
         cursorY = event.clientY;
     });
 
-    // Function to move and rotate the lizard image
+    // Move the lizard image
     function moveLizard() {
-        // Determine the center of the lizard image
+        // Calculate the distance from the lizard's current position to the cursor's position
         var lizardRect = lizardImage.getBoundingClientRect();
-        var lizardX = lizardRect.left + window.scrollX;
-        var lizardY = lizardRect.top + window.scrollY;
+        var dx = cursorX - lizardRect.left - lizardRect.width / 2;
+        var dy = cursorY - lizardRect.top - lizardRect.height / 2;
 
-        // Calculate the angle of rotation
-        var angle = Math.atan2(cursorY - lizardY, cursorX - lizardX) * 180 / Math.PI;
+        // Update the lizard's position by a fraction of the distance to create a smooth animation
+        lizardImage.style.left = `${lizardRect.left + dx * 0.1}px`;
+        lizardImage.style.top = `${lizardRect.top + dy * 0.1}px`;
 
-        // Update the lizard's position and rotation
-        lizardImage.style.left = `${cursorX - lizardRect.width}px`;
-        lizardImage.style.top = `${cursorY - lizardRect.height}px`;
-        lizardImage.style.transform = `rotate(${angle}deg)`;
-
-        // Continue the movement
+        // Continue the movement by calling moveLizard on the next animation frame
         requestAnimationFrame(moveLizard);
     }
 
