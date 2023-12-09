@@ -1,80 +1,38 @@
+/* Add styles for body, header, and download-container */
 body {
-    background-image: url('https://github.com/brahkiearchive/brahkie/raw/main/assets/imageAssets/background.gif');
-    background-repeat: repeat;
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
+    background: url('path-to-your-background-gif.gif') repeat;
+    text-align: center; /* This will center the content */
 }
 
-/* Style the download container with a gray background */
+.header {
+    margin-top: 50px; /* Adjust this value as needed */
+}
+
 .download-container {
-    background-color: #666666;
-    padding: 10px;
-    text-align: left;
+    background-color: grey; /* Your grey background */
+    margin: 20px auto; /* Centers the box and adds margin on top */
+    padding: 20px; /* Padding inside the box */
+    max-width: 80%; /* Adjust the width as needed */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Optional: adds a shadow for depth */
 }
 
-/* Add spacing between the paragraphs (download links) */
-.download-container p {
-    margin: 0;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Make the thumbnail images smaller and remove fixed dimensions to maintain aspect ratio */
-.download-container img {
-    width: 80px; /* Adjust as needed */
-    height: auto;
-}
-
-/* Password screen styling */
+/* Existing styles for password screen and unwelcome screen */
 .password-screen {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #666666;
-    padding: 20px;
-    border-radius: 0; /* Sharp edges */
+    /* Your existing styles */
 }
 
-/* Hide the archive content by default */
-.archive-content {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-/* Style for the unwelcome screen */
 .unwelcome-screen {
-    background-color: black;
-    color: red;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    text-align: center;
+    /* Your existing styles */
+}
+
+/* Existing styles for lizard image in lilshit.js */
+#lilshit {
     position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.unwelcome-screen p {
-    margin: 0;
-}
-
-/* Additional style for the header image */
-.header img {
-    display: block; /* This will put the title GIF on a new line */
-    margin: 0 auto; /* This will center the GIF */
-    padding-bottom: 20px; /* This adds some space below the GIF */
+    pointer-events: none;
+    width: 50px; /* Set the size of your lizard image */
+    height: auto;
+    left: 0px;
+    top: 0px;
 }
