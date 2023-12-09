@@ -5,42 +5,38 @@ document.addEventListener('DOMContentLoaded', function() {
     lizardImage.src = 'https://github.com/brahkiearchive/brarchive/blob/main/assets/imageAssets/lilshit.png?raw=true';
     lizardImage.alt = 'Lizard';
     lizardImage.id = 'lilshit';
-    lizardImage.style.position = 'fixed';
+    lizardImage.style.position = 'absolute';
     lizardImage.style.pointerEvents = 'none';
-    lizardImage.style.width = '50px';
+    lizardImage.style.width = '50px'; // Set the size of your lizard image
     lizardImage.style.height = 'auto';
     lizardImage.style.left = '0px';
     lizardImage.style.top = '0px';
     document.body.appendChild(lizardImage);
 
-    // Initial lizard position
-    var lizardX = 0;
-    var lizardY = 0;
-
-    // Last known cursor position
+    // Track the cursor position
     var cursorX = 0;
     var cursorY = 0;
 
-    // Function to move the lizard image
-    function moveLizard() {
-        // Update the lizard's position to move towards the cursor
-        lizardX += (cursorX - lizardX) * 0.05; // Slower movement
-        lizardY += (cursorY - lizardY) * 0.05; // Slower movement
-        
-        // Apply the position style to the lizard image
-        lizardImage.style.left = lizardX + 'px';
-        lizardImage.style.top = lizardY + 'px';
+    document.addEventListener('mousemove', function(event) {
+        cursorX = event.clientX;
+        cursorY = event.clientY;
+    });
 
-        // Use requestAnimationFrame for smoother animation
+    // Move the lizard image
+    function moveLizard() {
+        // Calculate the distance from the lizard's current position to the cursor's position
+        var lizardRect = lizardImage.getBoundingClientRect();
+        var dx = cursorX - lizardRect.left - lizardRect.width / 2;
+        var dy = cursorY - lizardRect.top - lizardRect.height / 2;
+
+        // Update the lizard's position by a fraction of the distance to create a smooth animation
+        lizardImage.style.left = `${lizardRect.left + dx * 0.1}px`;
+        lizardImage.style.top = `${lizardRect.top + dy * 0.1}px`;
+
+        // Continue the movement by calling moveLizard on the next animation frame
         requestAnimationFrame(moveLizard);
     }
 
-    // Start the movement loop
-    requestAnimationFrame(moveLizard);
-
-    // Update the cursor position
-    document.addEventListener('mousemove', function(event) {
-        cursorX = event.clientX - 25; // Offset by half the lizard's width for centering
-        cursorY = event.clientY - 25; // Offset by half the lizard's height for centering
-    });
+    // Start moving the lizard
+    moveLizard();
 });
