@@ -34,7 +34,7 @@
         .archive-entry {
             display: flex;
             align-items: center; /* Ensure vertical alignment */
-            justify-content: space-between; /* Spacing out the children */
+            justify-content: flex-start; /* Align children to the start */
             height: 200px;
             margin-bottom: 25px;
             border: 1px solid #959595;
@@ -52,11 +52,12 @@
             width: auto;
         }
         .text-container {
-            flex-grow: 1;
+            flex-grow: 2; /* Adjust the grow rate */
             display: flex;
             flex-direction: column;
             justify-content: center; /* Center content vertically */
             max-width: 500px; /* Maintain max width */
+            margin-right: auto; /* Push to left */
         }
         .video-title {
             font-weight: bold;
@@ -68,7 +69,7 @@
             margin-top: 10px;
         }
         .download-container {
-            width: 100px;
+            flex: 0 0 100px; /* Fixed width */
             display: flex;
             align-items: center;
             justify-content: center;
