@@ -9,25 +9,27 @@
             background-repeat: repeat;
             margin: 0;
             padding: 0;
-            height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Aligns content to start from the top */
+            height: 100vh; /* Full view height */
         }
         .title-image {
-            position: absolute;
-            top: 20%;
+            width: 100%; /* Ensures the title image is centered */
+            display: block;
+            margin: auto;
+            position: relative;
+            top: 20%; /* Adjust as needed */
         }
         .element-box {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             width: 50%;
             background-color: #666666;
             padding: 20px;
             box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
             overflow: auto;
+            margin-top: 50vh; /* Start from the middle of the viewport */
+            transform: translateY(-50%); /* Adjust vertical position */
         }
         .archive-entry {
             display: flex;
