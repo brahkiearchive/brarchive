@@ -34,28 +34,29 @@
         .archive-entry {
             display: flex;
             align-items: center;
+            justify-content: space-between; /* This will space out the children */
             height: 200px;
             margin-bottom: 25px;
             border: 1px solid #959595;
             padding: 10px;
         }
         .thumbnail-container {
-            flex: 0 0 220px;
+            flex: 0 0 220px; /* Fixed width, no flex grow or shrink */
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-right: 20px;
         }
         .thumbnail-container img {
             height: 125px;
             width: auto;
         }
         .text-container {
+            flex-grow: 1; /* Takes up the remaining space */
             display: flex;
             flex-direction: column;
             justify-content: center;
-            max-width: 500px;
-            flex-grow: 1; /* Allow this container to grow */
+            align-items: flex-start; /* Aligns text to the left */
+            padding: 0 10px; /* Optional padding for some space around text */
         }
         .video-title {
             font-weight: bold;
@@ -67,11 +68,10 @@
             margin-top: 10px;
         }
         .download-container {
-            width: 100px;
+            flex: 0 0 220px; /* Fixed width, no flex grow or shrink */
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-grow: 0; /* Prevent this container from growing */
             padding: 40px 0;
         }
         .archive-entry a {
