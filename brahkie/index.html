@@ -15,12 +15,12 @@
             margin-left: auto;
             margin-right: auto;
             position: relative;
-            top: 200px; /* Set the title image 200px below the top */
-            max-width: 100%; /* Ensures the title image does not exceed the screen width */
+            top: 200px;
+            max-width: 100%;
         }
         .element-box {
             position: absolute;
-            top: 500px; /* Start the content boxes at 500px down the page */
+            top: 500px;
             left: 50%;
             transform: translateX(-50%);
             width: 50%;
@@ -31,7 +31,7 @@
         }
         .archive-entry {
             display: flex;
-            align-items: start; /* Align items to the start (top) */
+            align-items: start; /* Align items to the top */
             height: 200px;
             margin-bottom: 50px;
         }
@@ -40,13 +40,14 @@
             height: 125px;
             width: auto;
         }
-        .archive-entry a {
-            margin-right: 50px;
-            text-decoration: none;
-        }
         .video-title {
             margin-left: 20px; /* Space between thumbnail and title */
-            /* Style as needed */
+            align-self: flex-start; /* Align the title to the top */
+        }
+        .archive-entry a {
+            margin-left: auto; /* Pushes the download link to the right */
+            margin-right: 50px;
+            text-decoration: none;
         }
         /* Add more CSS as needed */
     </style>
@@ -64,6 +65,85 @@
         <div class="archive-entry">
             <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/thumbnails/015%20-%2020k%20subscriber%20special!!1!!!.jpg?raw=true" alt="Thumbnail">
             <span class="video-title">20k subscriber special!!1!!!</span>
+            <a href="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/zips/015%20-%2020k%20subscriber%20special!!1!!!.zip?raw=true" download>Download ZIP</a>
+        </div>
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BRAHKIES ARCHIVE</title>
+    <link rel="icon" type="image/x-icon" href="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/favicon.ico?raw=true">
+    <style>
+        body {
+            background-image: url('https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/background.gif?raw=true');
+            background-repeat: repeat;
+            margin: 0;
+            padding: 0;
+        }
+        .title-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            top: 200px;
+            max-width: 100%;
+        }
+        .element-box {
+            position: absolute;
+            top: 500px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50%;
+            background-color: #666666;
+            padding: 20px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            overflow: auto;
+        }
+        .archive-entry {
+            display: flex;
+            align-items: center; /* Center items vertically */
+            height: 200px;
+            margin-bottom: 50px;
+        }
+        .thumbnail-title-container {
+            display: flex;
+            align-items: start; /* Align thumbnail and title to the top */
+            margin-left: 25px;
+        }
+        .archive-entry img {
+            height: 125px;
+            width: auto;
+        }
+        .video-title {
+            margin-left: 20px; /* Space between thumbnail and title */
+        }
+        .archive-entry a {
+            margin-left: auto; /* Pushes the download link to the right */
+            margin-right: 50px;
+            text-decoration: none;
+        }
+        /* Add more CSS as needed */
+    </style>
+</head>
+<body>
+    <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/title.gif?raw=true" alt="Title" class="title-image">
+    <div class="element-box">
+        <!-- First Entry -->
+        <div class="archive-entry">
+            <div class="thumbnail-title-container">
+                <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/thumbnails/016%20-%20why%20windows%20xp%20is%20better%20than%20windows%20vista.jpg?raw=true" alt="Thumbnail">
+                <span class="video-title">why windows xp is better than windows vista</span>
+            </div>
+            <a href="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/zips/016%20-%20why%20windows%20xp%20is%20better%20than%20windows%20vista.zip?raw=true" download>Download ZIP</a>
+        </div>
+        <!-- Second Entry -->
+        <div class="archive-entry">
+            <div class="thumbnail-title-container">
+                <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/thumbnails/015%20-%2020k%20subscriber%20special!!1!!!.jpg?raw=true" alt="Thumbnail">
+                <span class="video-title">20k subscriber special!!1!!!</span>
+            </div>
             <a href="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/zips/015%20-%2020k%20subscriber%20special!!1!!!.zip?raw=true" download>Download ZIP</a>
         </div>
     </div>
