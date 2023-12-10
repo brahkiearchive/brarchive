@@ -33,26 +33,44 @@
         }
         .archive-entry {
             display: flex;
-            align-items: center;
             height: 200px;
-            margin-bottom: 50px;
+            margin-bottom: 25px;
+            border: 1px solid black; /* Black border added */
         }
-        .thumbnail-title-container {
+        .thumbnail-container {
+            width: 220px;
             display: flex;
-            align-items: start;
-            margin-left: 25px;
+            justify-content: center;
+            align-items: center;
         }
         .archive-entry img {
             height: 125px;
             width: auto;
         }
+        .text-container {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 32px;
+        }
         .video-title {
-            margin-left: 20px;
-            font-weight: bold; /* Make the titles bold */
+            font-weight: bold;
+        }
+        .video-date {
+            margin-top: 0;
+        }
+        .video-description {
+            margin-top: 10px;
+        }
+        .download-container {
+            width: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 10px;
         }
         .archive-entry a {
-            margin-left: auto;
-            margin-right: 50px;
             text-decoration: none;
         }
     </style>
@@ -60,37 +78,31 @@
 <body>
     <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/title.gif?raw=true" alt="Title" class="title-image">
     <div class="element-box">
-        <!-- First Entry -->
         <div class="archive-entry">
-            <div class="thumbnail-title-container">
+            <div class="thumbnail-container">
                 <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/thumbnails/016%20-%20why%20windows%20xp%20is%20better%20than%20windows%20vista.jpg?raw=true" alt="Thumbnail">
+            </div>
+            <div class="text-container">
                 <span class="video-title">why windows xp is better than windows vista</span>
+                <span class="video-date">12/04/2023</span>
+                <span class="video-description">pls tell me if you like the video i tried really hard to make it nice</span>
             </div>
-            <a href="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/zips/016%20-%20why%20windows%20xp%20is%20better%20than%20windows%20vista.zip?raw=true" download>Download ZIP</a>
+            <div class="download-container">
+                <a href="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/zips/016%20-%20why%20windows%20xp%20is%20better%20than%20windows%20vista.zip?raw=true" download>download zip</a>
+            </div>
         </div>
-        <!-- Second Entry -->
         <div class="archive-entry">
-            <div class="thumbnail-title-container">
+            <div class="thumbnail-container">
                 <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/thumbnails/015%20-%2020k%20subscriber%20special!!1!!!.jpg?raw=true" alt="Thumbnail">
+            </div>
+            <div class="text-container">
                 <span class="video-title">20k subscriber special!!1!!!</span>
+                <span class="video-date">11/23/2023</span>
+                <span class="video-description">holy shit thanks so much guys im so happy for all subscribers i love u guys</span>
             </div>
-            <a href="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/zips/015%20-%2020k%20subscriber%20special!!1!!!.zip?raw=true" download>Download ZIP</a>
-        </div>
-        <!-- Duplicate of First Entry -->
-        <div class="archive-entry">
-            <div class="thumbnail-title-container">
-                <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/thumbnails/016%20-%20why%20windows%20xp%20is%20better%20than%20windows%20vista.jpg?raw=true" alt="Thumbnail">
-                <span class="video-title">why windows xp is better than windows vista</span>
+            <div class="download-container">
+                <a href="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/zips/015%20-%2020k%20subscriber%20special!!1!!!.zip?raw=true" download>download zip</a>
             </div>
-            <a href="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/zips/016%20-%20why%20windows%20xp%20is%20better%20than%20windows%20vista.zip?raw=true" download>Download ZIP</a>
-        </div>
-        <!-- Duplicate of Second Entry -->
-        <div class="archive-entry">
-            <div class="thumbnail-title-container">
-                <img src="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/thumbnails/015%20-%2020k%20subscriber%20special!!1!!!.jpg?raw=true" alt="Thumbnail">
-                <span class="video-title">20k subscriber special!!1!!!</span>
-            </div>
-            <a href="https://github.com/brahkiearchive/brarchive/blob/main/brahkie/assets/zips/015%20-%2020k%20subscriber%20special!!1!!!.zip?raw=true" download>Download ZIP</a>
         </div>
     </div>
 </body>
