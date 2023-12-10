@@ -12,16 +12,17 @@
         }
         .title-image {
             display: block;
-            margin: auto;
+            margin-left: auto;
+            margin-right: auto;
             position: relative;
-            top: 20%;
+            top: 200px; /* Set the title image 200px below the top */
             max-width: 100%; /* Ensures the title image does not exceed the screen width */
         }
         .element-box {
             position: absolute;
-            top: 60%; /* Adjust this value as needed to avoid overlapping the title image */
+            top: 500px; /* Start the content boxes at 500px down the page */
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translateX(-50%);
             width: 50%;
             background-color: #666666;
             padding: 20px;
